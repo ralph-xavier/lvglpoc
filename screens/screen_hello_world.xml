@@ -1,13 +1,63 @@
 <screen>
 	<styles>
-		<style name="style_main" bg_color="0x00688a" />
+		<style
+			name="ui_styleDialMain"
+			width="content"
+			height="content"
+			text_color="0xff6918"
+			border_width="0"
+			bg_color="0x000000"
+		/>
+		<style name="ui_styleDialText" text_color="0xff6918" line_width="5" />
+		<style name="ui_styleDialMinorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="20" />
+		<style name="ui_styleDialMajorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="32" />
 	</styles>
-
-	<view>
-		<style name="style_main" />
-
-		<lv_button align="center" style_bg_color="0x111">
-			<lv_label text="Hello world" style_text_font="font_medium" />
-		</lv_button>
+	<view name="ui_DialMain" scrollbar_mode="off">
+		<style name="ui_styleDialMain" />
+		<lv_obj
+			name="ui_dialScaleBackground"
+			width="320"
+			height="90"
+			align="bottom_mid"
+			scrollbar_mode="off"
+			style_radius="0"
+			style_bg_color="0x000000"
+			style_border_width="0"
+			style_pad_all="0"
+		>
+			<lv_obj
+				name="ui_dialContainer"
+				align="center"
+				width="320"
+				height="90"
+				style_bg_color="0x000000"
+				style_border_width="0"
+				style_radius="0"
+				style_pad_all="0"
+				style_pad_bottom="5"
+				scrollbar_mode="off"
+				scroll_chain_ver="false"
+			>
+				<lv_scale
+					name="ui_dialScale"
+					align="bottom_left"
+					major_tick_every="10"
+					total_tick_count="201"
+					style_min_width="2330"
+					style_height="90"
+					style_pad_hor="160"
+					mode="horizontal_top"
+					angle_range="180"
+					min_value="88"
+					max_value="108"
+					rotation="180"
+					style_line_width="0"
+				>
+					<style name="ui_styleDialMain" />
+					<style name="ui_styleDialMinorTicks" selector="items" />
+					<style name="ui_styleDialMajorTicks" selector="indicator" />
+				</lv_scale>
+			</lv_obj>
+		</lv_obj>
 	</view>
 </screen>
