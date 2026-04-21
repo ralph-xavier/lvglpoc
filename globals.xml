@@ -17,10 +17,20 @@
 
 	<images>
 		<!-- Add <file> or <data> tags here -->
+		<file src_path="images/Needle.png" name="needle" />
+		<file src_path="images/Overlay.png" name="overlay" />
 	</images>
 
 	<fonts>
 		<!-- Add <bin> , <tiny_ttf>, <freetype> tags here -->
 		<bin name="font_medium" as_file="false" src_path="fonts/Montserrat_Medium.ttf" size="20" bpp="4" />
+		<bin name="ui_font_Monaco12" as_file="false" src_path="fonts/Monaco.ttf" size="12" bpp="4" />
+		<bin name="ui_font_Monaco14" as_file="false" src_path="fonts/Monaco.ttf" size="14" bpp="4" />
+		<bin name="ui_font_Monaco16" as_file="false" src_path="fonts/Monaco.ttf" size="16" bpp="4" />
+		<bin name="ui_font_Monaco18" as_file="false" src_path="fonts/Monaco.ttf" size="18" bpp="4" />
+		<bin name="ui_font_Monaco20" as_file="false" src_path="fonts/Monaco.ttf" size="20" bpp="8" />
+		<bin name="ui_font_Monaco22" as_file="false" src_path="fonts/Monaco.ttf" size="22" bpp="8" />
+		<bin name="ui_font_Monaco24" as_file="false" src_path="fonts/Monaco.ttf" size="24" bpp="8" />
+		<bin name="ui_font_Monaco40" as_file="false" src_path="fonts/Monaco.ttf" size="40" bpp="8" />
 	</fonts>
 </globals>

@@ -7,6 +7,7 @@
 			text_color="0xff6918"
 			border_width="0"
 			bg_color="0x000000"
+			text_font="ui_font_Monaco22"
 		/>
 		<style name="ui_styleDialText" text_color="0xff6918" line_width="5" />
 		<style name="ui_styleDialMinorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="20" />
@@ -58,6 +59,30 @@
 					<style name="ui_styleDialMajorTicks" selector="indicator" />
 				</lv_scale>
 			</lv_obj>
+			<lv_obj
+				name="ui_dialScaleNeedle"
+				width="62"
+				height="17"
+				align="bottom_mid"
+				clickable="false"
+				scrollbar_mode="off"
+				style_bg_image_src="needle"
+				style_radius="0"
+				style_bg_opa="0"
+				style_border_width="0"
+				style_pad_all="0"
+			/>
+			<lv_obj
+				name="ui_dialScaleOverlay"
+				width="320"
+				height="170"
+				align="center"
+				clickable="false"
+				style_bg_image_src="overlay"
+				style_radius="0"
+				style_bg_opa="0"
+				style_border_opa="0"
+			/>
 		</lv_obj>
 	</view>
 </screen>
