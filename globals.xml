@@ -17,8 +17,8 @@
 
 	<images>
 		<!-- Add <file> or <data> tags here -->
-		<data src_path="images/Needle.png" name="needle" color_format="rgb565" />
-		<data src_path="images/Overlay.png" name="overlay" color_format="rgb565" />
+		<data src_path="images/Needle.png" name="needle" color_format="argb8888" />
+		<data src_path="images/Overlay.png" name="overlay" color_format="argb8888" />
 	</images>
 
 	<fonts>
