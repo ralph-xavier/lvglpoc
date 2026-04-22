@@ -19,8 +19,10 @@ extern "C" {
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
     #include "lvgl.h"
+    #include "src/core/lv_obj_class_private.h"
 #else
     #include "lvgl/lvgl.h"
+    #include "lvgl/src/core/lv_obj_class_private.h"
 #endif
 
 
@@ -51,13 +53,34 @@ extern "C" {
 
 extern lv_font_t * font_medium;
 
+extern lv_font_t * ui_font_Monaco12;
+
+extern lv_font_t * ui_font_Monaco14;
+
+extern lv_font_t * ui_font_Monaco16;
+
+extern lv_font_t * ui_font_Monaco18;
+
+extern lv_font_t * ui_font_Monaco20;
+
+extern lv_font_t * ui_font_Monaco22;
+
+extern lv_font_t * ui_font_Monaco24;
+
+extern lv_font_t * ui_font_Monaco40;
+
 /*----------------
  * Images
  *----------------*/
 
+extern const void * needle;
+extern const void * overlay;
+
 /*----------------
  * Subjects
  *----------------*/
+
+extern lv_subject_t vfo_keyboard_visible;
 
 /**********************
  * GLOBAL PROTOTYPES
