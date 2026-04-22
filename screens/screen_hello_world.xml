@@ -40,7 +40,7 @@
 			one_line="true"
 		>
 			<style name="ui_styleVfoText" />
-			<lv_obj-subject_toggle_event subject="vfo_keyboard_visible" trigger="clicked" />
+			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="1" trigger="clicked" />
 		</lv_textarea>
 
 		<lv_obj
