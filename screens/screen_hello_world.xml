@@ -1,20 +1,46 @@
 <screen>
 	<styles>
 		<style
+			name="ui_styleMainScreen"
+			width="content"
+			height="content"
+			border_width="1"
+			border_color="0xffffff"
+			bg_color="0x000000"
+		/>
+		<style name="ui_styleVfoText" text_color="0xff6918" text_font="ui_font_Monaco40" text_align="right" />
+		<style
 			name="ui_styleDialMain"
 			width="content"
 			height="content"
-			text_color="0xff6918"
-			border_width="0"
+			border_width="1"
+			border_color="0xffffff"
 			bg_color="0x000000"
 			text_font="ui_font_Monaco22"
 		/>
-		<style name="ui_styleDialText" text_color="0xff6918" line_width="5" />
-		<style name="ui_styleDialMinorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="20" />
-		<style name="ui_styleDialMajorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="32" />
+		<style name="ui_styleDialScaleText" text_color="0xff6918" text_font="ui_font_Monaco40" />
+		<style name="ui_styleDialScaleTextPortait" transform_rotation="2700" pad_ver="10" />
+		<style name="ui_styleDialScaleMinorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="20" />
+		<style name="ui_styleDialScaleMajorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="32" />
 	</styles>
-	<view name="ui_DialMain" scrollbar_mode="off">
+	<view name="ui_MainScreen" scrollbar_mode="off">
 		<style name="ui_styleDialMain" />
+		<lv_textarea
+			name="ui_vfoDisp"
+			align="top_mid"
+			width="320"
+			height="70"
+			click_focusable="true"
+			scrollbar_mode="off"
+			placeholder_text="Set Freq"
+			text="102.5"
+			style_radius="0"
+			style_bg_opa="0"
+			style_border_width="1"
+		>
+			<style name="ui_styleVfoText" />
+		</lv_textarea>
+
 		<lv_obj
 			name="ui_dialScaleBackground"
 			width="320"
@@ -23,19 +49,19 @@
 			scrollbar_mode="off"
 			style_radius="0"
 			style_bg_color="0x000000"
-			style_border_width="0"
+			style_border_width="1"
 			style_pad_all="0"
 		>
 			<lv_obj
 				name="ui_dialContainer"
-				align="center"
+				align="bottom_mid"
 				width="320"
 				height="90"
 				style_bg_color="0x000000"
 				style_border_width="0"
 				style_radius="0"
 				style_pad_all="0"
-				style_pad_bottom="5"
+				style_pad_bottom="0"
 				scrollbar_mode="off"
 				scroll_chain_ver="false"
 			>
@@ -51,12 +77,11 @@
 					angle_range="180"
 					min_value="88"
 					max_value="108"
-					rotation="180"
-					style_line_width="0"
+					style_pad_bottom="5"
 				>
-					<style name="ui_styleDialMain" />
-					<style name="ui_styleDialMinorTicks" selector="items" />
-					<style name="ui_styleDialMajorTicks" selector="indicator" />
+					<style name="ui_styleDialScaleText" selector="indicator" />
+					<style name="ui_styleDialScaleMinorTicks" selector="items" />
+					<style name="ui_styleDialScaleMajorTicks" selector="indicator" />
 				</lv_scale>
 			</lv_obj>
 			<lv_obj
@@ -75,14 +100,16 @@
 			<lv_obj
 				name="ui_dialScaleOverlay"
 				width="320"
-				height="170"
-				align="center"
+				height="90"
+				align="bottom_mid"
 				clickable="false"
 				style_bg_image_src="overlay"
 				style_radius="0"
 				style_bg_opa="0"
 				style_border_opa="0"
+				scrollbar_mode="off"
 			/>
 		</lv_obj>
+		<lv_keyboard name="ui_vfoKeyboard" hidden="true" width="320" height="110" mode="number" />
 	</view>
 </screen>
