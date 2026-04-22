@@ -18,7 +18,7 @@
 			bg_color="0x000000"
 			text_font="ui_font_Monaco22"
 		/>
-		<style name="ui_styleDialScaleText" text_color="0xff6918" text_font="ui_font_Monaco40" />
+		<style name="ui_styleDialScaleText" text_color="0xff6918" text_font="ui_font_Monaco22" />
 		<style name="ui_styleDialScaleTextPortait" transform_rotation="2700" pad_ver="10" />
 		<style name="ui_styleDialScaleMinorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="20" />
 		<style name="ui_styleDialScaleMajorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="32" />
@@ -37,8 +37,10 @@
 			style_radius="0"
 			style_bg_opa="0"
 			style_border_width="1"
+			one_line="true"
 		>
 			<style name="ui_styleVfoText" />
+			<lv_obj-subject_toggle_event subject="vfo_keyboard_visible" trigger="clicked" />
 		</lv_textarea>
 
 		<lv_obj
@@ -117,6 +119,10 @@
 				floating="false"
 			/>
 		</lv_obj>
-		<lv_keyboard name="ui_vfoKeyboard" hidden="true" width="320" height="110" mode="number" />
+		<lv_keyboard name="ui_vfoKeyboard" width="320" height="110" mode="number">
+			<lv_obj-bind_flag_if_eq subject="vfo_keyboard_visible" flag="hidden" ref_value="0" />
+			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="ready" />
+			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="cancel" />
+		</lv_keyboard>
 	</view>
 </screen>

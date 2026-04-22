@@ -13,6 +13,7 @@
 
 	<subjects>
 		<!-- Add <int>, <string>, or <float> subjects here -->
+		<int name="vfo_keyboard_visible" value="0" min_value="0" max_value="1" />
 	</subjects>
 
 	<images>
