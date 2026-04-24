@@ -25,6 +25,20 @@
 	</styles>
 	<view name="ui_MainScreen" scrollbar_mode="off">
 		<style name="ui_styleMainScreen" />
+		<dial_scale_widget
+			name="ui_dialAm"
+			align="bottom_mid"
+			frame_width="320"
+			frame_height="90"
+			min_value="530"
+			max_value="1710"
+			total_tick_count="119"
+			major_tick_every="10"
+			scale_pixel_width="1510"
+			style_pad_hor="160"
+			needle_src="needle"
+			overlay_src="overlay"
+		/>
 		<lv_textarea
 			name="ui_vfoDisp"
 			align="top_mid"
