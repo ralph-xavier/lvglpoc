@@ -57,6 +57,7 @@
 			style_bg_color="0x000000"
 			style_border_width="1"
 			style_pad_all="0"
+			scrollable="false"
 		>
 			<lv_obj
 				name="ui_dialContainer"
@@ -71,9 +72,10 @@
 				scrollbar_mode="off"
 				scroll_chain_ver="false"
 				scroll_chain_hor="false"
+				scrollable="false"
 			>
 				<dial_scale_widget
-					name="ui_dialFm"
+					name="ui_mainDial"
 					align="bottom_mid"
 					frame_width="320"
 					frame_height="90"

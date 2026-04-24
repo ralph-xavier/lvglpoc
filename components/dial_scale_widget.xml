@@ -35,6 +35,7 @@
 		style_bg_color="0x000000"
 		style_border_width="1"
 		style_pad_all="0"
+		scrollable="false"
 	>
 		<lv_obj
 			name="dial_viewport"
@@ -50,8 +51,8 @@
 			scrollable="true"
 			scroll_chain_hor="false"
 			scroll_chain_ver="false"
-			scroll_elastic="true"
-			scroll_momentum="true"
+			scroll_elastic="false"
+			scroll_momentum="false"
 		>
 			<lv_scale
 				name="dial_scale"
