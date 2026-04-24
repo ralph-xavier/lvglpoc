@@ -25,20 +25,6 @@
 	</styles>
 	<view name="ui_MainScreen" scrollbar_mode="off">
 		<style name="ui_styleMainScreen" />
-		<dial_scale_widget
-			name="ui_dialAm"
-			align="bottom_mid"
-			frame_width="320"
-			frame_height="90"
-			min_value="530"
-			max_value="1710"
-			total_tick_count="119"
-			major_tick_every="10"
-			scale_pixel_width="1510"
-			style_pad_hor="160"
-			needle_src="needle"
-			overlay_src="overlay"
-		/>
 		<lv_textarea
 			name="ui_vfoDisp"
 			align="top_mid"
@@ -86,52 +72,22 @@
 				scroll_chain_ver="false"
 				scroll_chain_hor="false"
 			>
-				<lv_scale
-					name="ui_dialScale"
-					align="bottom_left"
-					major_tick_every="10"
+				<dial_scale_widget
+					name="ui_dialFm"
+					align="bottom_mid"
+					frame_width="320"
+					frame_height="90"
+					min_value="8800"
+					max_value="10800"
 					total_tick_count="201"
-					style_min_width="2330"
-					style_height="90"
+					major_tick_every="10"
+					scale_pixel_width="2330"
 					style_pad_hor="160"
-					mode="horizontal_top"
-					angle_range="180"
-					min_value="88"
-					max_value="108"
-					style_pad_bottom="5"
-				>
-					<style name="ui_styleDialScaleText" selector="indicator" />
-					<style name="ui_styleDialScaleMinorTicks" selector="items" />
-					<style name="ui_styleDialScaleMajorTicks" selector="indicator" />
-				</lv_scale>
+					text_src="88.00\n89.00\n90.00\n91.00\n92.00\n93.00\n94.00\n95.00\n96.00\n97.00\n98.00\n99.00\n100.00\n101.00\n102.00\n103.00\n104.00\n105.00\n106.00\n107.00\n108.00"
+					needle_src="needle"
+					overlay_src="overlay"
+				/>
 			</lv_obj>
-			<lv_obj
-				name="ui_dialScaleNeedle"
-				width="62"
-				height="17"
-				align="bottom_mid"
-				clickable="false"
-				scrollbar_mode="off"
-				style_bg_image_src="needle"
-				style_radius="0"
-				style_bg_opa="0"
-				style_border_width="0"
-				style_pad_all="0"
-				floating="false"
-			/>
-			<lv_obj
-				name="ui_dialScaleOverlay"
-				width="320"
-				height="90"
-				align="bottom_mid"
-				clickable="false"
-				style_bg_image_src="overlay"
-				style_radius="0"
-				style_bg_opa="0"
-				style_border_opa="0"
-				scrollbar_mode="off"
-				floating="false"
-			/>
 		</lv_obj>
 		<lv_keyboard name="ui_vfoKeyboard" width="320" height="110" mode="number">
 			<lv_obj-bind_flag_if_eq subject="vfo_keyboard_visible" flag="hidden" ref_value="0" />

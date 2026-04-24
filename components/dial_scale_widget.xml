@@ -50,8 +50,8 @@
 			scrollable="true"
 			scroll_chain_hor="false"
 			scroll_chain_ver="false"
-			scroll_elastic="false"
-			scroll_momentum="false"
+			scroll_elastic="true"
+			scroll_momentum="true"
 		>
 			<lv_scale
 				name="dial_scale"
