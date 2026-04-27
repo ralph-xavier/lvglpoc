@@ -1,7 +1,7 @@
 <project name="ui_hello_world">
 	<targets>
 		<target name="target1">
-			<display width="640" height="180" />
+			<display width="180" height="640" />
 		</target>
 	</targets>
 </project>

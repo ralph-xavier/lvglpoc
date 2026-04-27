@@ -1,7 +1,7 @@
 <component>
 	<api>
 		<prop name="frame_width" type="int" default="320" />
-		<prop name="frame_height" type="int" default="90" />
+		<prop name="frame_height" type="int" default="120" />
 
 		<prop name="min_value" type="int" default="8800" />
 		<prop name="max_value" type="int" default="10800" />
@@ -19,7 +19,13 @@
 	</api>
 
 	<styles>
-		<style name="dial_scale_text" text_color="0xff6918" text_font="ui_font_Monaco20" />
+		<style
+			name="dial_scale_text"
+			text_color="0xff6918"
+			text_font="ui_font_Monaco20"
+			transform_rotation="2700"
+			pad_ver="30"
+		/>
 
 		<style name="dial_scale_minor_ticks" line_color="0xffffff" line_width="2" line_opa="100%" length="20" />
 
