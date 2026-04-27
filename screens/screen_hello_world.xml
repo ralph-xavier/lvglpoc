@@ -89,7 +89,6 @@
 					major_tick_every="10"
 					scale_pixel_width="2330"
 					style_pad_hor="160"
-					text_src="88.00\n89.00\n90.00\n91.00\n92.00\n93.00\n94.00\n95.00\n96.00\n97.00\n98.00\n99.00\n100.00\n101.00\n102.00\n103.00\n104.00\n105.00\n106.00\n107.00\n108.00"
 					needle_src="needle"
 					overlay_src="overlay"
 				/>

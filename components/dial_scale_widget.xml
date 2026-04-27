@@ -12,8 +12,6 @@
 		<prop name="scale_pixel_width" type="int" default="2330" />
 		<prop name="style_pad_hor" type="int" default="160" />
 
-		<prop name="text_src" type="string[NULL]" default="NULL" />
-
 		<prop name="needle_src" type="image" />
 		<prop name="overlay_src" type="image" />
 	</api>
@@ -69,7 +67,6 @@
 				max_value="$max_value"
 				mode="horizontal_top"
 				angle_range="180"
-				text_src="$text_src"
 				style_min_width="$scale_pixel_width"
 				style_height="$frame_height"
 				style_pad_hor="$style_pad_hor"
