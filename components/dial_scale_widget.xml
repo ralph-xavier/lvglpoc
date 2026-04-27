@@ -1,29 +1,28 @@
 <component>
 	<api>
-		<prop name="frame_width" type="int" default="320" />
-		<prop name="frame_height" type="int" default="120" />
+		<prop name="frame_width" type="int" default="120" />
+		<prop name="frame_height" type="int" default="320" />
 
-		<prop name="min_value" type="int" default="8800" />
-		<prop name="max_value" type="int" default="10800" />
+		<prop name="min_value" type="int" default="10800" />
+		<prop name="max_value" type="int" default="8800" />
 
 		<prop name="total_tick_count" type="int" default="201" />
 		<prop name="major_tick_every" type="int" default="10" />
 
-		<prop name="scale_pixel_width" type="int" default="2330" />
-		<prop name="style_pad_hor" type="int" default="160" />
+		<prop name="scale_pixel_width" type="int" default="90" />
+		<prop name="scale_pixel_height" type="int" default="2330" />
+		<prop name="style_pad_hor" type="int" default="5" />
+		<prop name="style_pad_ver" type="int" default="160" />
+
+		<prop name="scale_align" type="string" default="bottom_left" />
+		<prop name="scale_mode" type="string" default="vertical_right" />
 
 		<prop name="needle_src" type="image" />
 		<prop name="overlay_src" type="image" />
 	</api>
 
 	<styles>
-		<style
-			name="dial_scale_text"
-			text_color="0xff6918"
-			text_font="ui_font_Monaco20"
-			transform_rotation="2700"
-			pad_ver="30"
-		/>
+		<style name="dial_scale_text" text_color="0xff6918" text_font="ui_font_Monaco20" pad_right="5" />
 
 		<style name="dial_scale_minor_ticks" line_color="0xffffff" line_width="2" line_opa="100%" length="20" />
 
@@ -43,7 +42,7 @@
 	>
 		<lv_obj
 			name="dial_viewport"
-			align="bottom_mid"
+			align="center"
 			width="$frame_width"
 			height="$frame_height"
 			scrollbar_mode="off"
@@ -60,17 +59,19 @@
 		>
 			<lv_scale
 				name="dial_scale"
-				align="bottom_left"
+				align="top_mid"
 				total_tick_count="$total_tick_count"
 				major_tick_every="$major_tick_every"
 				min_value="$min_value"
 				max_value="$max_value"
-				mode="horizontal_top"
+				mode="$scale_mode"
 				angle_range="180"
 				style_min_width="$scale_pixel_width"
+				style_min_height="$scale_pixel_height"
 				style_height="$frame_height"
+				style_width="$frame_width"
 				style_pad_hor="$style_pad_hor"
-				style_pad_bottom="5"
+				style_pad_ver="$style_pad_ver"
 			>
 				<style name="dial_scale_text" selector="indicator" />
 				<style name="dial_scale_minor_ticks" selector="items" />
@@ -82,7 +83,7 @@
 			name="dial_needle"
 			width="62"
 			height="17"
-			align="bottom_mid"
+			align="center"
 			clickable="false"
 			floating="true"
 			scrollbar_mode="off"
@@ -97,7 +98,7 @@
 			name="dial_overlay"
 			width="$frame_width"
 			height="$frame_height"
-			align="bottom_mid"
+			align="center"
 			clickable="false"
 			floating="true"
 			scrollbar_mode="off"
