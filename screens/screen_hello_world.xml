@@ -19,9 +19,6 @@
 			text_font="ui_font_Monaco22"
 		/>
 		<style name="ui_styleDialScaleText" text_color="0xff6918" text_font="ui_font_Monaco22" />
-		<style name="ui_styleDialScaleTextPortait" pad_ver="10" />
-		<style name="ui_styleDialScaleMinorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="20" />
-		<style name="ui_styleDialScaleMajorTicks" line_color="0xffffff" line_width="2" line_opa="100%" length="32" />
 		<style name="ui_styleVfoKeyboard" bg_color="0xffffff" text_color="0xff6918" bg_opa="5%" />
 	</styles>
 	<view name="ui_MainScreen" scrollbar_mode="off">
@@ -46,8 +43,8 @@
 
 		<lv_obj
 			name="ui_dialScaleBackground"
-			width="320"
-			height="120"
+			width="120"
+			height="320"
 			align="center"
 			scrollbar_mode="off"
 			scroll_chain_hor="false"
@@ -59,15 +56,12 @@
 			style_border_width="0"
 			style_pad_all="0"
 			scrollable="false"
-			style_transform_pivot_x="160"
-			style_transform_pivot_y="60"
-			style_transform_rotation="900"
 		>
 			<lv_obj
 				name="ui_dialContainer"
 				align="bottom_mid"
-				width="320"
-				height="120"
+				width="120"
+				height="320"
 				style_bg_color="0x000000"
 				style_border_width="0"
 				style_radius="0"
@@ -78,23 +72,17 @@
 				scroll_chain_hor="false"
 				scrollable="false"
 			>
-				<dial_scale_widget
-					name="ui_mainDial"
-					align="bottom_mid"
-					frame_width="320"
-					frame_height="120"
-					min_value="8800"
-					max_value="10800"
-					total_tick_count="201"
-					major_tick_every="10"
-					scale_pixel_width="2330"
-					style_pad_hor="160"
-					needle_src="needle"
-					overlay_src="overlay"
-				/>
+				<dial_scale_widget name="ui_mainDial" needle_src="needle" overlay_src="overlay" />
 			</lv_obj>
 		</lv_obj>
-		<lv_keyboard name="ui_vfoKeyboard" width="320" height="110" mode="number" style_bg_color="0x101010">
+		<lv_keyboard
+			name="ui_vfoKeyboard"
+			width="180"
+			height="180"
+			mode="number"
+			style_bg_color="0x101010"
+			align="center"
+		>
 			<style name="ui_styleVfoKeyboard" selector="items" />
 			<style name="ui_styleVfoKeyboard" selector="items|checked" />
 			<lv_obj-bind_flag_if_eq subject="vfo_keyboard_visible" flag="hidden" ref_value="0" />
