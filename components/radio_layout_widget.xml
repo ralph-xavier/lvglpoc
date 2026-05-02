@@ -34,7 +34,7 @@
 		<prop name="dial_scale_mode" type="string" default="vertical_right" />
 
 		<prop name="dial_needle_align" type="string" default="left_mid" />
-		<prop name="dial_needle_x" type="int" default="0" />
+		<prop name="dial_needle_x" type="int" default="-5" />
 		<prop name="dial_needle_y" type="int" default="-40" />
 		<prop name="dial_needle_width" type="int" default="62" />
 		<prop name="dial_needle_height" type="int" default="17" />
@@ -51,15 +51,25 @@
 		<prop name="dial_overlay_pivot_y" type="int" default="120" />
 		<prop name="dial_overlay_rotation" type="int" default="900" />
 	</api>
+	<styles>
+		<style name="ui_styleVfoText" text_color="0xff6918" text_font="ui_font_Monaco40" text_align="right" />
+	</styles>
 
-	<view extends="lv_obj" scrollbar_mode="off" scrollable="false">
+	<view
+		extends="lv_obj"
+		scrollbar_mode="off"
+		scrollable="false"
+		width="180"
+		height="640"
+		style_bg_color="0x000000"
+		style_border_width="0"
+		style_radius="0"
+	>
 		<lv_textarea
 			name="ui_vfoDisp"
 			align="$vfo_disp_align"
 			width="$vfo_disp_width"
 			height="$vfo_disp_height"
-			x="$vfo_disp_x"
-			y="$vfo_disp_y"
 			click_focusable="true"
 			scrollbar_mode="off"
 			placeholder_text="Set Freq"
@@ -69,6 +79,7 @@
 			style_border_width="0"
 			one_line="true"
 		>
+			<style name="ui_styleVfoText" />
 			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="1" trigger="clicked" />
 		</lv_textarea>
 
