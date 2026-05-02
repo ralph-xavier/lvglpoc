@@ -3,6 +3,8 @@
 		<prop name="frame_width" type="int" default="120" />
 		<prop name="frame_height" type="int" default="320" />
 
+		<prop name="text_pad_right" type="int" default="10" />
+
 		<prop name="min_value" type="int" default="10800" />
 		<prop name="max_value" type="int" default="8800" />
 
@@ -14,11 +16,33 @@
 		<prop name="style_pad_hor" type="int" default="5" />
 		<prop name="style_pad_ver" type="int" default="160" />
 
-		<prop name="scale_align" type="string" default="bottom_left" />
+		<prop name="scale_angle_range" type="int" default="180" />
+		<prop name="scale_align" type="string" default="top_left" />
 		<prop name="scale_mode" type="string" default="vertical_right" />
 
+		<prop name="viewport_align" type="string" default="center" />
+		<prop name="viewport_width" type="int" default="120" />
+		<prop name="viewport_height" type="int" default="320" />
+
 		<prop name="needle_src" type="image" />
+		<prop name="needle_width" type="int" default="62" />
+		<prop name="needle_height" type="int" default="17" />
+		<prop name="needle_align" type="string" default="left_mid" />
+		<prop name="needle_x" type="int" default="0" />
+		<prop name="needle_y" type="int" default="-40" />
+		<prop name="needle_pivot_x" type="int" default="0" />
+		<prop name="needle_pivot_y" type="int" default="17" />
+		<prop name="needle_rotation" type="int" default="900" />
+
 		<prop name="overlay_src" type="image" />
+		<prop name="overlay_width" type="int" default="320" />
+		<prop name="overlay_height" type="int" default="120" />
+		<prop name="overlay_align" type="string" default="left_mid" />
+		<prop name="overlay_x" type="int" default="0" />
+		<prop name="overlay_y" type="int" default="-220" />
+		<prop name="overlay_pivot_x" type="int" default="0" />
+		<prop name="overlay_pivot_y" type="int" default="120" />
+		<prop name="overlay_rotation" type="int" default="900" />
 	</api>
 
 	<styles>
@@ -42,9 +66,9 @@
 	>
 		<lv_obj
 			name="dial_viewport"
-			align="center"
-			width="$frame_width"
-			height="$frame_height"
+			align="$viewport_align"
+			width="$viewport_width"
+			height="$viewport_height"
 			scrollbar_mode="off"
 			style_bg_color="0x000000"
 			style_border_width="0"
@@ -59,13 +83,13 @@
 		>
 			<lv_scale
 				name="dial_scale"
-				align="top_left"
+				align="$scale_align"
 				total_tick_count="$total_tick_count"
 				major_tick_every="$major_tick_every"
 				min_value="$min_value"
 				max_value="$max_value"
 				mode="$scale_mode"
-				angle_range="180"
+				angle_range="$scale_angle_range"
 				style_min_width="$scale_pixel_width"
 				style_min_height="$scale_pixel_height"
 				style_height="$frame_height"
@@ -81,9 +105,14 @@
 
 		<lv_obj
 			name="dial_needle"
-			width="62"
-			height="17"
-			align="left_mid"
+			width="$needle_width"
+			height="$needle_height"
+			align="$needle_align"
+			x="$needle_x"
+			y="$needle_y"
+			style_transform_pivot_x="$needle_pivot_x"
+			style_transform_pivot_y="$needle_pivot_y"
+			style_transform_rotation="$needle_rotation"
 			clickable="false"
 			floating="true"
 			scrollbar_mode="off"
@@ -92,17 +121,18 @@
 			style_bg_opa="0"
 			style_border_width="0"
 			style_pad_all="0"
-			style_transform_pivot_x="0"
-			style_transform_pivot_y="17"
-			y="-40"
-			style_transform_rotation="900"
 		/>
 
 		<lv_obj
 			name="dial_overlay"
-			width="320"
-			height="120"
-			align="left_mid"
+			width="$overlay_width"
+			height="$overlay_height"
+			align="$overlay_align"
+			x="$overlay_x"
+			y="$overlay_y"
+			style_transform_pivot_x="$overlay_pivot_x"
+			style_transform_pivot_y="$overlay_pivot_y"
+			style_transform_rotation="$overlay_rotation"
 			clickable="false"
 			floating="true"
 			scrollbar_mode="off"
@@ -111,10 +141,6 @@
 			style_bg_opa="0"
 			style_border_opa="0"
 			style_border_width="0"
-			style_transform_pivot_x="0"
-			style_transform_pivot_y="120"
-			y="-220"
-			style_transform_rotation="900"
 		/>
 	</view>
 </component>

@@ -21,7 +21,7 @@
 		<style name="ui_styleDialScaleText" text_color="0xff6918" text_font="ui_font_Monaco22" />
 		<style name="ui_styleVfoKeyboard" bg_color="0xffffff" text_color="0xff6918" bg_opa="5%" />
 	</styles>
-	<view name="ui_MainScreen" scrollbar_mode="off">
+	<view name="ui_MainScreen" scrollbar_mode="off" scrollable="false">
 		<style name="ui_styleMainScreen" />
 		<lv_textarea
 			name="ui_vfoDisp"

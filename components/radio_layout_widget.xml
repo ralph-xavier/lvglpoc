@@ -1,0 +1,157 @@
+<component>
+	<api>
+		<prop name="vfo_disp_align" type="string" default="top_mid" />
+		<prop name="vfo_disp_width" type="int" default="180" />
+		<prop name="vfo_disp_height" type="int" default="70" />
+		<prop name="vfo_disp_x" type="int" default="0" />
+		<prop name="vfo_disp_y" type="int" default="0" />
+
+		<prop name="dial_bg_align" type="string" default="center" />
+		<prop name="dial_bg_width" type="int" default="120" />
+		<prop name="dial_bg_height" type="int" default="320" />
+		<prop name="dial_bg_x" type="int" default="0" />
+		<prop name="dial_bg_y" type="int" default="0" />
+
+		<prop name="dial_container_align" type="string" default="bottom_mid" />
+		<prop name="dial_container_width" type="int" default="120" />
+		<prop name="dial_container_height" type="int" default="320" />
+
+		<prop name="keyboard_align" type="string" default="center" />
+		<prop name="keyboard_width" type="int" default="180" />
+		<prop name="keyboard_height" type="int" default="180" />
+		<prop name="keyboard_x" type="int" default="0" />
+		<prop name="keyboard_y" type="int" default="0" />
+
+		<prop name="dial_frame_width" type="int" default="120" />
+		<prop name="dial_frame_height" type="int" default="320" />
+		<prop name="dial_viewport_width" type="int" default="120" />
+		<prop name="dial_viewport_height" type="int" default="320" />
+		<prop name="dial_scale_pixel_width" type="int" default="90" />
+		<prop name="dial_scale_pixel_height" type="int" default="2330" />
+		<prop name="dial_style_pad_hor" type="int" default="5" />
+		<prop name="dial_style_pad_ver" type="int" default="160" />
+		<prop name="dial_scale_align" type="string" default="top_left" />
+		<prop name="dial_scale_mode" type="string" default="vertical_right" />
+
+		<prop name="dial_needle_align" type="string" default="left_mid" />
+		<prop name="dial_needle_x" type="int" default="0" />
+		<prop name="dial_needle_y" type="int" default="-40" />
+		<prop name="dial_needle_width" type="int" default="62" />
+		<prop name="dial_needle_height" type="int" default="17" />
+		<prop name="dial_needle_pivot_x" type="int" default="0" />
+		<prop name="dial_needle_pivot_y" type="int" default="17" />
+		<prop name="dial_needle_rotation" type="int" default="900" />
+
+		<prop name="dial_overlay_align" type="string" default="left_mid" />
+		<prop name="dial_overlay_x" type="int" default="0" />
+		<prop name="dial_overlay_y" type="int" default="-220" />
+		<prop name="dial_overlay_width" type="int" default="320" />
+		<prop name="dial_overlay_height" type="int" default="120" />
+		<prop name="dial_overlay_pivot_x" type="int" default="0" />
+		<prop name="dial_overlay_pivot_y" type="int" default="120" />
+		<prop name="dial_overlay_rotation" type="int" default="900" />
+	</api>
+
+	<view extends="lv_obj" scrollbar_mode="off" scrollable="false">
+		<lv_textarea
+			name="ui_vfoDisp"
+			align="$vfo_disp_align"
+			width="$vfo_disp_width"
+			height="$vfo_disp_height"
+			x="$vfo_disp_x"
+			y="$vfo_disp_y"
+			click_focusable="true"
+			scrollbar_mode="off"
+			placeholder_text="Set Freq"
+			text="102.5"
+			style_radius="0"
+			style_bg_opa="0"
+			style_border_width="0"
+			one_line="true"
+		>
+			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="1" trigger="clicked" />
+		</lv_textarea>
+
+		<lv_obj
+			name="ui_dialScaleBackground"
+			align="$dial_bg_align"
+			width="$dial_bg_width"
+			height="$dial_bg_height"
+			x="$dial_bg_x"
+			y="$dial_bg_y"
+			scrollbar_mode="off"
+			scroll_chain_hor="false"
+			scroll_chain_ver="false"
+			scroll_elastic="false"
+			scroll_momentum="false"
+			style_radius="0"
+			style_bg_color="0x000000"
+			style_border_width="0"
+			style_pad_all="0"
+			scrollable="false"
+		>
+			<lv_obj
+				name="ui_dialContainer"
+				align="$dial_container_align"
+				width="$dial_container_width"
+				height="$dial_container_height"
+				style_bg_color="0x000000"
+				style_border_width="0"
+				style_radius="0"
+				style_pad_all="0"
+				style_pad_bottom="0"
+				scrollbar_mode="off"
+				scroll_chain_ver="false"
+				scroll_chain_hor="false"
+				scrollable="false"
+			>
+				<dial_scale_widget
+					name="ui_mainDial"
+					frame_width="$dial_frame_width"
+					frame_height="$dial_frame_height"
+					viewport_width="$dial_viewport_width"
+					viewport_height="$dial_viewport_height"
+					scale_pixel_width="$dial_scale_pixel_width"
+					scale_pixel_height="$dial_scale_pixel_height"
+					style_pad_hor="$dial_style_pad_hor"
+					style_pad_ver="$dial_style_pad_ver"
+					scale_align="$dial_scale_align"
+					scale_mode="$dial_scale_mode"
+					needle_align="$dial_needle_align"
+					needle_x="$dial_needle_x"
+					needle_y="$dial_needle_y"
+					needle_width="$dial_needle_width"
+					needle_height="$dial_needle_height"
+					needle_pivot_x="$dial_needle_pivot_x"
+					needle_pivot_y="$dial_needle_pivot_y"
+					needle_rotation="$dial_needle_rotation"
+					overlay_align="$dial_overlay_align"
+					overlay_x="$dial_overlay_x"
+					overlay_y="$dial_overlay_y"
+					overlay_width="$dial_overlay_width"
+					overlay_height="$dial_overlay_height"
+					overlay_pivot_x="$dial_overlay_pivot_x"
+					overlay_pivot_y="$dial_overlay_pivot_y"
+					overlay_rotation="$dial_overlay_rotation"
+					needle_src="needle"
+					overlay_src="overlay"
+				/>
+			</lv_obj>
+		</lv_obj>
+
+		<lv_keyboard
+			name="ui_vfoKeyboard"
+			align="$keyboard_align"
+			width="$keyboard_width"
+			height="$keyboard_height"
+			x="$keyboard_x"
+			y="$keyboard_y"
+			mode="number"
+			style_bg_color="0x101010"
+		>
+			<lv_obj-bind_flag_if_eq subject="vfo_keyboard_visible" flag="hidden" ref_value="0" />
+			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="ready" />
+			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="cancel" />
+		</lv_keyboard>
+	</view>
+</component>
