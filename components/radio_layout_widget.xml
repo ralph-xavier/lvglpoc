@@ -33,26 +33,27 @@
 		<prop name="dial_scale_align" type="string" default="top_left" />
 		<prop name="dial_scale_mode" type="string" default="vertical_right" />
 
+		<prop name="dial_needle_src" type="image" default="needle_portrait" />
 		<prop name="dial_needle_align" type="string" default="left_mid" />
-		<prop name="dial_needle_x" type="int" default="-5" />
-		<prop name="dial_needle_y" type="int" default="-40" />
-		<prop name="dial_needle_width" type="int" default="62" />
-		<prop name="dial_needle_height" type="int" default="17" />
-		<prop name="dial_needle_pivot_x" type="int" default="0" />
-		<prop name="dial_needle_pivot_y" type="int" default="17" />
-		<prop name="dial_needle_rotation" type="int" default="900" />
+		<prop name="dial_needle_width" type="int" default="17" />
+		<prop name="dial_needle_height" type="int" default="62" />
+		<prop name="dial_needle_x" type="int" default="4" />
+		<prop name="dial_needle_y" type="int" default="0" />
 
+		<prop name="dial_overlay_src" type="image" default="overlay_portrait" />
 		<prop name="dial_overlay_align" type="string" default="left_mid" />
+		<prop name="dial_overlay_width" type="int" default="120" />
+		<prop name="dial_overlay_height" type="int" default="320" />
 		<prop name="dial_overlay_x" type="int" default="0" />
-		<prop name="dial_overlay_y" type="int" default="-220" />
-		<prop name="dial_overlay_width" type="int" default="320" />
-		<prop name="dial_overlay_height" type="int" default="120" />
-		<prop name="dial_overlay_pivot_x" type="int" default="0" />
-		<prop name="dial_overlay_pivot_y" type="int" default="120" />
-		<prop name="dial_overlay_rotation" type="int" default="900" />
+		<prop name="dial_overlay_y" type="int" default="0" />
+
+		<prop name="viewport_align" type="string" default="center" />
+		<prop name="viewport_width" type="int" default="120" />
+		<prop name="viewport_height" type="int" default="320" />
 	</api>
 	<styles>
 		<style name="ui_styleVfoText" text_color="0xff6918" text_font="ui_font_Monaco40" text_align="right" />
+		<style name="ui_styleVfoKeyboard" bg_color="0xffffff" text_color="0xff6918" bg_opa="5%" />
 	</styles>
 
 	<view
@@ -67,7 +68,7 @@
 	>
 		<lv_textarea
 			name="ui_vfoDisp"
-			align="$vfo_disp_align"
+			align="top_mid"
 			width="$vfo_disp_width"
 			height="$vfo_disp_height"
 			click_focusable="true"
@@ -85,7 +86,7 @@
 
 		<lv_obj
 			name="ui_dialScaleBackground"
-			align="$dial_bg_align"
+			align="center"
 			width="$dial_bg_width"
 			height="$dial_bg_height"
 			x="$dial_bg_x"
@@ -103,7 +104,7 @@
 		>
 			<lv_obj
 				name="ui_dialContainer"
-				align="$dial_container_align"
+				align="bottom_mid"
 				width="$dial_container_width"
 				height="$dial_container_height"
 				style_bg_color="0x000000"
@@ -133,26 +134,20 @@
 					needle_y="$dial_needle_y"
 					needle_width="$dial_needle_width"
 					needle_height="$dial_needle_height"
-					needle_pivot_x="$dial_needle_pivot_x"
-					needle_pivot_y="$dial_needle_pivot_y"
-					needle_rotation="$dial_needle_rotation"
 					overlay_align="$dial_overlay_align"
 					overlay_x="$dial_overlay_x"
 					overlay_y="$dial_overlay_y"
 					overlay_width="$dial_overlay_width"
 					overlay_height="$dial_overlay_height"
-					overlay_pivot_x="$dial_overlay_pivot_x"
-					overlay_pivot_y="$dial_overlay_pivot_y"
-					overlay_rotation="$dial_overlay_rotation"
-					needle_src="needle"
-					overlay_src="overlay"
+					needle_src="$dial_needle_src"
+					overlay_src="$dial_overlay_src"
 				/>
 			</lv_obj>
 		</lv_obj>
 
 		<lv_keyboard
 			name="ui_vfoKeyboard"
-			align="$keyboard_align"
+			align="center"
 			width="$keyboard_width"
 			height="$keyboard_height"
 			x="$keyboard_x"
@@ -160,6 +155,8 @@
 			mode="number"
 			style_bg_color="0x101010"
 		>
+			<style name="ui_styleVfoKeyboard" selector="items" />
+			<style name="ui_styleVfoKeyboard" selector="items|checked" />
 			<lv_obj-bind_flag_if_eq subject="vfo_keyboard_visible" flag="hidden" ref_value="0" />
 			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="ready" />
 			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="cancel" />

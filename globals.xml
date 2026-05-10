@@ -20,6 +20,8 @@
 		<!-- Add <file> or <data> tags here -->
 		<data src_path="images/Needle.png" name="needle" color_format="argb8888" />
 		<data src_path="images/Overlay.png" name="overlay" color_format="argb8888" />
+		<data src_path="images/Needle_portrait.png" name="needle_portrait" color_format="argb8888" />
+		<data src_path="images/Overlay_portrait.png" name="overlay_portrait" color_format="argb8888" />
 	</images>
 
 	<fonts>
