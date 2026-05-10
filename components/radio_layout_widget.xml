@@ -1,10 +1,16 @@
 <component>
 	<api>
+		<prop name="band_disp_align" type="string" default="top_mid" />
+		<prop name="band_disp_width" type="int" default="70" />
+		<prop name="band_disp_height" type="int" default="15" />
+		<prop name="band_disp_x" type="int" default="15" />
+		<prop name="band_disp_y" type="int" default="0" />
+
 		<prop name="vfo_disp_align" type="string" default="top_mid" />
 		<prop name="vfo_disp_width" type="int" default="180" />
 		<prop name="vfo_disp_height" type="int" default="70" />
 		<prop name="vfo_disp_x" type="int" default="0" />
-		<prop name="vfo_disp_y" type="int" default="0" />
+		<prop name="vfo_disp_y" type="int" default="20" />
 
 		<prop name="dial_bg_align" type="string" default="center" />
 		<prop name="dial_bg_width" type="int" default="120" />
@@ -54,10 +60,12 @@
 		<prop name="volume_slider_width" type="int" default="5" />
 		<prop name="volume_slider_height" type="int" default="320" />
 		<prop name="volume_slider_align" type="string" default="left_mid" />
-		<prop name="volume_slider_x" type="int" default="0" />
+		<prop name="volume_slider_x" type="int" default="10" />
 		<prop name="volume_slider_y" type="int" default="0" />
 	</api>
 	<styles>
+		<style name="ui_styleBandText" text_color="0xff6918" text_font="ui_font_Monaco20" text_align="left" />
+
 		<style name="ui_styleVfoText" text_color="0xff6918" text_font="ui_font_Monaco40" text_align="right" />
 		<style name="ui_styleVfoKeyboard" bg_color="0xffffff" text_color="0xff6918" bg_opa="5%" />
 
@@ -73,8 +81,26 @@
 		height="640"
 		style_bg_color="0x000000"
 		style_border_width="0"
+		style_border_color="0x000000"
 		style_radius="0"
+		style_pad_all="0"
 	>
+		<lv_textarea
+			name="ui_bandDisp"
+			align="top_left"
+			width="$band_disp_width"
+			height="$band_disp_height"
+			scrollbar_mode="off"
+			text="FM"
+			style_radius="0"
+			style_bg_opa="0"
+			style_border_width="0"
+			one_line="true"
+			x="$band_disp_x"
+			y="$band_disp_y"
+		>
+			<style name="ui_styleBandText" />
+		</lv_textarea>
 		<lv_textarea
 			name="ui_vfoDisp"
 			align="top_mid"
@@ -88,6 +114,8 @@
 			style_bg_opa="0"
 			style_border_width="0"
 			one_line="true"
+			x="$vfo_disp_x"
+			y="$vfo_disp_y"
 		>
 			<style name="ui_styleVfoText" />
 			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="1" trigger="clicked" />
@@ -154,6 +182,79 @@
 			</lv_obj>
 		</lv_obj>
 
+		<lv_slider
+			name="ui_volumeSlider"
+			align="left_mid"
+			width="$volume_slider_width"
+			height="$volume_slider_height"
+			x="$volume_slider_x"
+			y="$volume_slider_y"
+			min_value="0"
+			max_value="63"
+			value="32"
+		>
+			<style name="ui_styleVolumeKnob" selector="knob" />
+			<style name="ui_styleVolumeIndicator" selector="indicator" />
+		</lv_slider>
+
+		<lv_obj
+			name="ui_stepPopup"
+			align="center"
+			width="150"
+			height="180"
+			hidden="true"
+			scrollable="false"
+			scrollbar_mode="off"
+			style_radius="0"
+			style_bg_color="0x101010"
+			style_bg_opa="95%"
+			style_border_color="0xff6918"
+			style_border_width="1"
+			style_pad_all="4"
+		>
+			<lv_obj
+				name="ui_stepList"
+				width="142"
+				height="172"
+				align="center"
+				scrollable="true"
+				scrollbar_mode="auto"
+				style_radius="0"
+				style_bg_opa="0"
+				style_border_width="0"
+				style_pad_all="0"
+			/>
+		</lv_obj>
+
+		<lv_obj
+			name="ui_bandPopup"
+			align="center"
+			width="172"
+			height="560"
+			hidden="true"
+			scrollable="false"
+			scrollbar_mode="off"
+			style_radius="0"
+			style_bg_color="0x101010"
+			style_bg_opa="95%"
+			style_border_color="0xff6918"
+			style_border_width="1"
+			style_pad_all="4"
+		>
+			<lv_obj
+				name="ui_bandList"
+				width="164"
+				height="552"
+				align="center"
+				scrollable="true"
+				scrollbar_mode="auto"
+				style_radius="0"
+				style_bg_opa="0"
+				style_border_width="0"
+				style_pad_all="0"
+			/>
+		</lv_obj>
+
 		<lv_keyboard
 			name="ui_vfoKeyboard"
 			align="center"
@@ -170,19 +271,5 @@
 			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="ready" />
 			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="cancel" />
 		</lv_keyboard>
-		<lv_slider
-			name="ui_volumeSlider"
-			align="$volume_slider_align"
-			width="$volume_slider_width"
-			height="$volume_slider_height"
-			x="$volume_slider_x"
-			y="$volume_slider_y"
-			min_value="0"
-			max_value="63"
-			value="32"
-		>
-			<style name="ui_styleVolumeKnob" selector="knob" />
-			<style name="ui_styleVolumeIndicator" selector="indicator" />
-		</lv_slider>
 	</view>
 </component>
