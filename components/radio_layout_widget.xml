@@ -50,10 +50,19 @@
 		<prop name="viewport_align" type="string" default="center" />
 		<prop name="viewport_width" type="int" default="120" />
 		<prop name="viewport_height" type="int" default="320" />
+
+		<prop name="volume_slider_width" type="int" default="5" />
+		<prop name="volume_slider_height" type="int" default="320" />
+		<prop name="volume_slider_align" type="string" default="left_mid" />
+		<prop name="volume_slider_x" type="int" default="0" />
+		<prop name="volume_slider_y" type="int" default="0" />
 	</api>
 	<styles>
 		<style name="ui_styleVfoText" text_color="0xff6918" text_font="ui_font_Monaco40" text_align="right" />
 		<style name="ui_styleVfoKeyboard" bg_color="0xffffff" text_color="0xff6918" bg_opa="5%" />
+
+		<style name="ui_styleVolumeKnob" bg_opa="0" border_opa="0" shadow_opa="0" width="0" height="0" />
+		<style name="ui_styleVolumeIndicator" bg_color="0xff6819" />
 	</styles>
 
 	<view
@@ -161,5 +170,19 @@
 			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="ready" />
 			<lv_obj-subject_set_int_event subject="vfo_keyboard_visible" value="0" trigger="cancel" />
 		</lv_keyboard>
+		<lv_slider
+			name="ui_volumeSlider"
+			align="$volume_slider_align"
+			width="$volume_slider_width"
+			height="$volume_slider_height"
+			x="$volume_slider_x"
+			y="$volume_slider_y"
+			min_value="0"
+			max_value="63"
+			value="32"
+		>
+			<style name="ui_styleVolumeKnob" selector="knob" />
+			<style name="ui_styleVolumeIndicator" selector="indicator" />
+		</lv_slider>
 	</view>
 </component>
