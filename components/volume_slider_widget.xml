@@ -1,0 +1,66 @@
+<component>
+	<api>
+		<prop name="volume_slidercontainer_width" type="int" default="15" />
+		<prop name="volume_slidercontainer_height" type="int" default="320" />
+		<prop name="volume_slidercontainer_align" type="string" default="center" />
+
+		<prop name="volume_slider_width" type="int" default="5" />
+		<prop name="volume_slider_height" type="int" default="280" />
+		<prop name="volume_slider_align" type="string" default="top_mid" />
+		<prop name="volume_slider_x" type="int" default="0" />
+		<prop name="volume_slider_y" type="int" default="0" />
+
+		<prop name="volume_icon_width" type="int" default="15" />
+		<prop name="volume_icon_height" type="int" default="15" />
+		<prop name="volume_icon_align" type="string" default="bottom_mid" />
+		<prop name="volume_icon_x" type="int" default="0" />
+		<prop name="volume_icon_y" type="int" default="0" />
+		<prop name="volume_icon_src" type="image" default="volume_15x15" />
+		<prop name="volume_icon_mute_src" type="image" default="volume_mute_15x15" />
+		<prop name="volume_icon_img_recolor" type="color" default="0xff6819" />
+	</api>
+	<styles>
+		<style name="ui_styleVolumeKnob" bg_opa="0" border_opa="0" shadow_opa="0" width="0" height="0" />
+		<style name="ui_styleVolumeIndicator" bg_color="0xff6819" />
+		<style name="ui_styleVolumeIcon" bg_image_src="$volume_icon_src" />
+		<style name="ui_styleVolumeIconMute" bg_image_src="$volume_icon_mute_src" />
+	</styles>
+
+	<view
+		extends="lv_obj"
+		scrollbar_mode="off"
+		scrollable="false"
+		width="15"
+		height="320"
+		style_bg_color="0x000000"
+		style_border_width="0"
+		style_border_color="0x000000"
+		style_radius="0"
+		style_pad_all="0"
+	>
+		<lv_slider
+			name="ui_volumeSlider"
+			align="center"
+			width="$volume_slider_width"
+			height="$volume_slider_height"
+			x="$volume_slider_x"
+			y="$volume_slider_y"
+			min_value="0"
+			max_value="63"
+			value="32"
+		>
+			<style name="ui_styleVolumeKnob" selector="knob" />
+			<style name="ui_styleVolumeIndicator" selector="indicator" />
+		</lv_slider>
+		<lv_image
+			name="volume_icon"
+			clickable="true"
+			src="$volume_icon_src"
+			align="bottom_mid"
+			style_image_recolor="$volume_icon_img_recolor"
+			style_image_recolor_opa="255"
+		/>
+		<style selector="pressed" name="ui_styleVolumeIconMute" />
+		<style selector="released" name="ui_styleVolumeIconMute" />
+	</view>
+</component>
