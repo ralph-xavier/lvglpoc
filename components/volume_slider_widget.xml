@@ -46,8 +46,8 @@
 			x="$volume_slider_x"
 			y="$volume_slider_y"
 			min_value="0"
-			max_value="63"
-			value="32"
+			max_value="100"
+			value="30"
 		>
 			<style name="ui_styleVolumeKnob" selector="knob" />
 			<style name="ui_styleVolumeIndicator" selector="indicator" />
@@ -60,7 +60,7 @@
 			style_image_recolor="$volume_icon_img_recolor"
 			style_image_recolor_opa="255"
 		/>
-		<style selector="pressed" name="ui_styleVolumeIconMute" />
-		<style selector="released" name="ui_styleVolumeIconMute" />
+		<style selector="pressed|selected" name="ui_styleVolumeIconMute" />
+		<style selector="released" name="ui_styleVolumeIcon" />
 	</view>
 </component>

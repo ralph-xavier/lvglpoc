@@ -10,7 +10,7 @@
 		<prop name="vfo_disp_width" type="int" default="180" />
 		<prop name="vfo_disp_height" type="int" default="70" />
 		<prop name="vfo_disp_x" type="int" default="0" />
-		<prop name="vfo_disp_y" type="int" default="20" />
+		<prop name="vfo_disp_y" type="int" default="30" />
 
 		<prop name="dial_bg_align" type="string" default="center" />
 		<prop name="dial_bg_width" type="int" default="120" />
@@ -182,20 +182,7 @@
 			</lv_obj>
 		</lv_obj>
 
-		<lv_slider
-			name="ui_volumeSlider"
-			align="left_mid"
-			width="$volume_slider_width"
-			height="$volume_slider_height"
-			x="$volume_slider_x"
-			y="$volume_slider_y"
-			min_value="0"
-			max_value="63"
-			value="32"
-		>
-			<style name="ui_styleVolumeKnob" selector="knob" />
-			<style name="ui_styleVolumeIndicator" selector="indicator" />
-		</lv_slider>
+		<volume_slider_widget align="left_mid" />
 
 		<lv_obj
 			name="ui_stepPopup"
@@ -252,6 +239,36 @@
 				style_bg_opa="0"
 				style_border_width="0"
 				style_pad_all="0"
+			/>
+		</lv_obj>
+
+		<lv_obj
+			name="ui_volumeLabelPopup"
+			align="center"
+			width="content"
+			height="content"
+			hidden="true"
+			scrollable="false"
+			scrollbar_mode="off"
+			style_radius="5"
+			style_bg_color="0x101010"
+			style_bg_opa="95%"
+			style_border_color="0xff6918"
+			style_border_width="1"
+			style_text_color="0xff6918"
+			style_text_font="ui_font_Monaco40"
+			style_text_align="center"
+			style_pad_all="0"
+			y="-130"
+		>
+			<lv_label
+				name="ui_volumeLabel"
+				style_text_align="right"
+				width="110"
+				text="30%"
+				style_pad_top="10"
+				style_pad_bottom="5"
+				style_pad_right="8"
 			/>
 		</lv_obj>
 
