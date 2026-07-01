@@ -21,7 +21,15 @@
 	</api>
 	<styles>
 		<style name="ui_styleVolumeKnob" bg_opa="0" border_opa="0" shadow_opa="0" width="0" height="0" />
-		<style name="ui_styleVolumeIndicator" bg_color="0xff6819" />
+		<style
+			name="ui_styleVolumeIndicator"
+			radius="0"
+			bg_image_src="volume_indicator_bg_26x260"
+			bg_image_recolor="0xff6819"
+			bg_image_recolor_opa="255"
+			bg_color="0xff6819"
+			bg_opa="50"
+		/>
 		<style name="ui_styleVolumeIcon" bg_image_src="$volume_icon_src" />
 		<style name="ui_styleVolumeIconMute" bg_image_src="$volume_icon_mute_src" />
 	</styles>
@@ -47,7 +55,8 @@
 			y="$volume_slider_y"
 			min_value="0"
 			max_value="100"
-			value="30"
+			style_radius="0"
+			value="70"
 		>
 			<style name="ui_styleVolumeKnob" selector="knob" />
 			<style name="ui_styleVolumeIndicator" selector="indicator" />
