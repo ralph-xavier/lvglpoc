@@ -1,22 +1,22 @@
 <component>
 	<api>
-		<prop name="volume_slidercontainer_width" type="int" default="15" />
+		<prop name="volume_slidercontainer_width" type="int" default="28" />
 		<prop name="volume_slidercontainer_height" type="int" default="320" />
 		<prop name="volume_slidercontainer_align" type="string" default="center" />
 
-		<prop name="volume_slider_width" type="int" default="5" />
-		<prop name="volume_slider_height" type="int" default="280" />
+		<prop name="volume_slider_width" type="int" default="10" />
+		<prop name="volume_slider_height" type="int" default="260" />
 		<prop name="volume_slider_align" type="string" default="top_mid" />
 		<prop name="volume_slider_x" type="int" default="0" />
 		<prop name="volume_slider_y" type="int" default="0" />
 
-		<prop name="volume_icon_width" type="int" default="15" />
-		<prop name="volume_icon_height" type="int" default="15" />
+		<prop name="volume_icon_width" type="int" default="28" />
+		<prop name="volume_icon_height" type="int" default="28" />
 		<prop name="volume_icon_align" type="string" default="bottom_mid" />
 		<prop name="volume_icon_x" type="int" default="0" />
 		<prop name="volume_icon_y" type="int" default="0" />
-		<prop name="volume_icon_src" type="image" default="volume_15x15" />
-		<prop name="volume_icon_mute_src" type="image" default="volume_mute_15x15" />
+		<prop name="volume_icon_src" type="image" default="volume_28x28" />
+		<prop name="volume_icon_mute_src" type="image" default="volume_mute_28x28" />
 		<prop name="volume_icon_img_recolor" type="color" default="0xff6819" />
 	</api>
 	<styles>
@@ -30,7 +30,7 @@
 		extends="lv_obj"
 		scrollbar_mode="off"
 		scrollable="false"
-		width="15"
+		width="28"
 		height="320"
 		style_bg_color="0x000000"
 		style_border_width="0"

@@ -23,14 +23,14 @@
 		<data src_path="images/Needle_portrait.png" name="needle_portrait" color_format="argb8888" />
 		<data src_path="images/Overlay_portrait.png" name="overlay_portrait" color_format="argb8888" />
 
-		<data src_path="images/volume_15x15.png" name="volume_15x15" color_format="argb8888" />
+		<data src_path="images/volume_28x28.png" name="volume_28x28" color_format="argb8888" />
 		<data src_path="images/volume_100x100.png" name="volume_100x100" color_format="argb8888" />
-		<data src_path="images/volume-mute_15x15.png" name="volume_mute_15x15" color_format="argb8888" />
+		<data src_path="images/volume-mute_28x28.png" name="volume_mute_28x28" color_format="argb8888" />
 		<data src_path="images/volume-mute_100x100.png" name="volume_mute_100x100" color_format="argb8888" />
 
-		<data src_path="images/wifi_28x28.png" name="volume_28x28" color_format="argb8888" />
+		<data src_path="images/wifi_28x28.png" name="wifi_28x28" color_format="argb8888" />
 		<data src_path="images/wifi_100x100.png" name="wifi_100x100" color_format="argb8888" />
-		<data src_path="images/wifi_off_28x28.png" name="volume_off_28x28" color_format="argb8888" />
+		<data src_path="images/wifi_off_28x28.png" name="wifi_off_28x28" color_format="argb8888" />
 		<data src_path="images/wifi_off_100x100.png" name="wifi_off_100x100" color_format="argb8888" />
 	</images>
 
