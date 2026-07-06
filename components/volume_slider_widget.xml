@@ -1,4 +1,7 @@
 <component>
+	<previews>
+		<preview width="28" height="320" style_bg_color="0x000000" />
+	</previews>
 	<api>
 		<prop name="volume_slidercontainer_width" type="int" default="28" />
 		<prop name="volume_slidercontainer_height" type="int" default="320" />

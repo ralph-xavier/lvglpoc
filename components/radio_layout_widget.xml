@@ -1,9 +1,20 @@
 <component>
+	<previews>
+		<preview width="180" height="640" style_bg_color="0x000000" />
+	</previews>
 	<api>
+		<prop name="menu_icon_align" type="string" default="top_mid" />
+		<prop name="menu_icon_width" type="int" default="28" />
+		<prop name="menu_icon_height" type="int" default="28" />
+		<prop name="menu_icon_x" type="int" default="0" />
+		<prop name="menu_icon_y" type="int" default="0" />
+		<prop name="menu_icon_src" type="image" default="menu_icon_28x28" />
+		<prop name="menu_icon_img_recolor" type="color" default="0xff6819" />
+
 		<prop name="band_disp_align" type="string" default="top_mid" />
 		<prop name="band_disp_width" type="int" default="70" />
 		<prop name="band_disp_height" type="int" default="15" />
-		<prop name="band_disp_x" type="int" default="15" />
+		<prop name="band_disp_x" type="int" default="30" />
 		<prop name="band_disp_y" type="int" default="0" />
 
 		<prop name="vfo_disp_align" type="string" default="top_mid" />
@@ -70,7 +81,7 @@
 		<style name="ui_styleVfoKeyboard" bg_color="0xffffff" text_color="0xff6918" bg_opa="5%" />
 
 		<style name="ui_styleVolumeKnob" bg_opa="0" border_opa="0" shadow_opa="0" width="0" height="0" />
-		<style name="ui_styleVolumeIndicator" bg_color="0xff6819" />
+		<style name="ui_styleVolumeIndicator" bg_color="0xff6918" />
 	</styles>
 
 	<view
@@ -81,7 +92,6 @@
 		height="640"
 		style_bg_color="0x000000"
 		style_border_width="0"
-		style_border_color="0x000000"
 		style_radius="0"
 		style_pad_all="0"
 	>
@@ -101,6 +111,16 @@
 		>
 			<style name="ui_styleBandText" />
 		</lv_textarea>
+		<lv_image
+			name="ui_menu"
+			clickable="true"
+			src="$menu_icon_src"
+			align="top_left"
+			style_image_recolor="$menu_icon_img_recolor"
+			style_image_recolor_opa="255"
+			x="$menu_icon_x"
+			y="$menu_icon_y"
+		/>
 		<lv_textarea
 			name="ui_vfoDisp"
 			align="top_mid"

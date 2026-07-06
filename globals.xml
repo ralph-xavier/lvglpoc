@@ -19,15 +19,19 @@
 	<images>
 		<!-- Add <file> or <data> tags here -->
 		<data src_path="images/Needle.png" name="needle" color_format="argb8888" />
-		<data src_path="images/Overlay.png" name="overlay" color_format="argb8888" />
 		<data src_path="images/Needle_portrait.png" name="needle_portrait" color_format="argb8888" />
+
+		<data src_path="images/Overlay.png" name="overlay" color_format="argb8888" />
 		<data src_path="images/Overlay_portrait.png" name="overlay_portrait" color_format="argb8888" />
+
+		<data src_path="images/Menu_28x28.png" name="menu_icon_28x28" color_format="argb8888" />
+
+		<data src_path="images/indicator_ver_26x260.png" name="volume_indicator_bg_26x260" color_format="argb8888" />
 
 		<data src_path="images/volume_28x28.png" name="volume_28x28" color_format="argb8888" />
 		<data src_path="images/volume_100x100.png" name="volume_100x100" color_format="argb8888" />
 		<data src_path="images/volume-mute_28x28.png" name="volume_mute_28x28" color_format="argb8888" />
 		<data src_path="images/volume-mute_100x100.png" name="volume_mute_100x100" color_format="argb8888" />
-		<data src_path="images/indicator_ver_26x260.png" name="volume_indicator_bg_26x260" color_format="argb8888" />
 
 		<data src_path="images/wifi_28x28.png" name="wifi_28x28" color_format="argb8888" />
 		<data src_path="images/wifi_100x100.png" name="wifi_100x100" color_format="argb8888" />
